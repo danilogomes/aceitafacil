@@ -7,7 +7,7 @@ module Aceitafacil
 
         validates :customer_id, :number, :name, :exp_date, presence: true
         validates :exp_date, format: { with: /\d{6}/ }
-        validates :number, format: { with: /\d{4}\s\d{4}\s\d{4}\s\d{4}/,message: I18n.t(:invalid_card_number, scope: "activerecord.error.messages") }
+        validates :number, format: { with: /\d{4}\s\d{4}\s\d{4}\s\d{4}/,message: "Número de cartão inválido" }
          validates :number, length: { minimum: 16 }
 
         attr_accessor :customer_id, :number, :name, :exp_date
